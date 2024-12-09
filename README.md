@@ -13,3 +13,12 @@ Create a function with two parameters a and b. The function calculates the follo
 
 (12 * a + 25 * b) / (1 + a**(2**b))	
 and returns a result of the expression rounded up to the second decimal place.
+### Task 2: Data Types - Strings
+#### Get longest word
+Implement a function get_longest_word(s: str) -> str which returns the longest word in the given string. The word can contain any symbols except whitespaces (' ', '\n', '\t' and so on). If there are multiple longest words in the string with the same length return the word that occurs first.
+
+Example:
+```
+>>> get_longest_word('Python is simple and effective!')
+'effective!'
+```
