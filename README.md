@@ -22,3 +22,28 @@ Example:
 >>> get_longest_word('Python is simple and effective!')
 'effective!'
 ```
+#### Replacer
+Implement a function that receives a string and replaces all " symbols with ' and vice versa.
+
+#### Fractions
+Create a function that takes two parameters of string type which are fractions with the same denominator and returns a sum expression of these fractions and the sum result.
+
+For example:
+```
+>>> a_b = '1/3'
+>>> c_b = '5/3'
+>>> get_fractions(a_b, c_b)
+'1/3 + 5/3 = 6/3'
+```
+#### Palindrome
+Write a function that checks whether a string is a palindrome or not. The usage of any reversing functions is prohibited.
+
+To check your implementation you can use strings from here
+
+Examples:
+```
+A dog! A panic in a pagoda!
+Do nine men Interpret? Nine men I nod
+T. Eliot, top bard, notes putrid tang emanating, is sad; I'd assign it a name: gnat dirt upset on drab pot toilet.
+A man, a plan, a canal — Panama!
+```
