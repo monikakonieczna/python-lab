@@ -18,7 +18,7 @@ and returns a result of the expression rounded up to the second decimal place.
 Implement a function get_longest_word(s: str) -> str which returns the longest word in the given string. The word can contain any symbols except whitespaces (' ', '\n', '\t' and so on). If there are multiple longest words in the string with the same length return the word that occurs first.
 
 __Examples:__
-```
+```python 
 >>> get_longest_word('Python is simple and effective!')
 'effective!'
 ```
@@ -29,7 +29,7 @@ Implement a function that receives a string and replaces all " symbols with ' an
 Create a function that takes two parameters of string type which are fractions with the same denominator and returns a sum expression of these fractions and the sum result.
 
 __Examples:__
-```
+```python 
 >>> a_b = '1/3'
 >>> c_b = '5/3'
 >>> get_fractions(a_b, c_b)
@@ -42,7 +42,7 @@ To check your implementation you can use strings from here
 
 __Examples:__
 
-```
+```python 
 A dog! A panic in a pagoda!
 Do nine men Interpret? Nine men I nod
 T. Eliot, top bard, notes putrid tang emanating, is sad; I'd assign it a name: gnat dirt upset on drab pot toilet.
@@ -55,10 +55,10 @@ Write a Python program that accepts a sequence of words as input and prints the 
 __Examples:__
 
 Input:
-```
+```python 
 ('red', 'white', 'black', 'red', 'green', 'black') 
 ```
-Output:
-```
+Output: 
+```python 
 ['black', 'green', 'red', 'white']
 ```
