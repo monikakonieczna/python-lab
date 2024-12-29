@@ -64,3 +64,16 @@ Output:
 ```
 #### Fizzbuzz list
 Update the __get_fizzbuzz_list__ function. The function has to generate and return a list with numbers from _1_ to _n_ inclusive where the _n_ is passed as a parameter to the function. But if the number is divided by _3_ the function puts a _Fizz_ word into the list, and if the number is divided by _5_ the function puts a _Buzz_ word into the list. If the number is divided by both _3_ and _5_ the function puts _FizzBuzz_ into the list.
+
+#### Foo
+Implement a function `foo(List[int]) -> List[int]` which, given a list of
+integers, returns a new list such that each element at index `i` of the new list
+is the product of all the numbers in the original array except the one at `i`.
+
+__Example:__
+```python
+>>> foo([1, 2, 3, 4, 5])
+[120, 60, 40, 30, 24]
+>>>foo([3, 2, 1])
+[2, 3, 6]
+```
