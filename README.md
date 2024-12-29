@@ -47,3 +47,17 @@ Do nine men Interpret? Nine men I nod
 T. Eliot, top bard, notes putrid tang emanating, is sad; I'd assign it a name: gnat dirt upset on drab pot toilet.
 A man, a plan, a canal — Panama!
 ```
+### Task 3: Data Types - Lists
+#### Sort unique elements
+Write a Python program that accepts a sequence of words as input and prints the unique words in a sorted form.
+
+#### Examples
+
+Input:
+```
+('red', 'white', 'black', 'red', 'green', 'black') 
+```
+Output:
+```
+['black', 'green', 'red', 'white']
+```
