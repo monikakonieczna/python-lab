@@ -2,7 +2,8 @@
 This repository contains my progress and tasks completed during my Python Core Course. Below is a summary of the key tasks and concepts covered in the course.
 
 ## Introduction
-This repository documents the tasks completed throughout my Python Core Course. The course covers basic to intermediate Python programming concepts, including data types, functions, control structures, modules, and object-oriented programming.
+This repository documents the tasks completed throughout my Python Core Course. The course covers basic to intermediate Python programming concepts, 
+including data types, functions, control structures, modules, and object-oriented programming.
 
 ## Tasks and Exercises
 Below is a list of the tasks and exercises completed during the course:
@@ -15,7 +16,8 @@ Create a function with two parameters a and b. The function calculates the follo
 and returns a result of the expression rounded up to the second decimal place.
 ### Task 2: Data Types - Strings
 #### Get longest word
-Implement a function get_longest_word(s: str) -> str which returns the longest word in the given string. The word can contain any symbols except whitespaces (' ', '\n', '\t' and so on). If there are multiple longest words in the string with the same length return the word that occurs first.
+Implement a function get_longest_word(s: str) -> str which returns the longest word in the given string. The word can contain any symbols except whitespaces (' ', '\n', '\t' and so on). 
+If there are multiple longest words in the string with the same length return the word that occurs first.
 
 __Examples:__
 ```python 
@@ -63,7 +65,9 @@ Output:
 ['black', 'green', 'red', 'white']
 ```
 #### Fizzbuzz list
-Update the __get_fizzbuzz_list__ function. The function has to generate and return a list with numbers from _1_ to _n_ inclusive where the _n_ is passed as a parameter to the function. But if the number is divided by _3_ the function puts a _Fizz_ word into the list, and if the number is divided by _5_ the function puts a _Buzz_ word into the list. If the number is divided by both _3_ and _5_ the function puts _FizzBuzz_ into the list.
+Update the __get_fizzbuzz_list__ function. The function has to generate and return a list with numbers from _1_ to _n_ inclusive where the _n_ is passed as a parameter to the function. 
+But if the number is divided by _3_ the function puts a _Fizz_ word into the list, and if the number is divided by _5_ the function puts a _Buzz_ word into the list. 
+If the number is divided by both _3_ and _5_ the function puts _FizzBuzz_ into the list.
 
 #### Foo
 Implement a function `foo(List[int]) -> List[int]` which, given a list of
@@ -76,4 +80,28 @@ __Example:__
 [120, 60, 40, 30, 24]
 >>>foo([3, 2, 1])
 [2, 3, 6]
+```
+
+### Task 4: Data Types - Tuples
+#### Get Tuple
+Implement a function `get_tuple(num: int) -> Tuple[int]` which returns a tuple of a given integer's digits.
+
+__Example:__
+```python
+>>> get_tuple(87178291199)
+(8, 7, 1, 7, 8, 2, 9, 1, 1, 9, 9)
+```
+#### Get pairs
+Implement a function `get_pairs(lst: List) -> List[Tuple]` which returns a list
+of tuples containing pairs of elements. The pairs should be formed as in the
+example. If there is only one element in the list, return `[]` instead.
+
+__Example:__
+```python
+>>> get_pairs([1, 2, 3, 8, 9])
+[(1, 2), (2, 3), (3, 8), (8, 9)]
+>>> get_pairs(['need', 'to', 'sleep', 'more'])
+[('need', 'to'), ('to', 'sleep'), ('sleep', 'more')] 
+>>> get_pairs([1])
+[]
 ```
