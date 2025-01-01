@@ -105,7 +105,7 @@ __Example:__
 >>> get_pairs([1])
 []
 ```
-### Task 4: Data Types - Dictonaries
+### Task 5: Data Types - Dictonaries
 
 Write a Python program to count the frequency of each character in a string (ignore the case of letters).
 
