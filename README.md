@@ -105,7 +105,7 @@ __Example:__
 >>> get_pairs([1])
 []
 ```
-### Task 4: Data Types - Dictonaries
+### Task 5: Data Types - Dictonaries
 
 Write a Python program to count the frequency of each character in a string (ignore the case of letters).
 
@@ -114,3 +114,35 @@ __Example:__
 Input: `'Oh, it is python'`
 
 Output: `{" ": 3, ",": 1, "h": 2, "i": 2, "n": 1, "o": 2, "p": 1, "s": 1, "t": 2, "y": 1}`
+
+### Data Types - Final Task 1
+
+Write a Python program to print all the unique values of all the dictionaries in a list.
+
+__Example__:
+```
+Input: [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+Output: {'S005', 'S002', 'S007', 'S001', 'S009'}
+```
+
+### Data Types - Final Task 2
+
+Write a program which makes a pretty print of a part of the multiplication table.
+
+__Example__:
+```
+Input:
+row_start = 2
+row_end = 4
+column_start = 3
+column_end = 7
+
+Output: [[6, 8, 10, 12, 14], [9, 12, 15, 18, 21], [12, 16, 20, 24, 28]]
+that is equal to the following multiplication table:
+
+    3   4   5   6   7   
+2   6   8   10  12  14  
+3   9   12  15  18  21  
+4   12  16  20  24  28
+
+```
