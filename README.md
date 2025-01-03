@@ -159,3 +159,28 @@ Implement a function that takes a number as an argument and returns a dictionary
 >>> generate_squares(5)
 {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
+#### Filter
+We have a list of dictionaries:
+```python
+friends = [
+    {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
+    {'name': 'Emily', 'gender': 'female', 'sport': 'volleyball'},
+]
+```
+Create functions `query`, `select`, `field_filter` to work with lists similar to 
+`friends`.
+Stubs for these functions are already created.
+
+Example:
+```python
+>>> result = query(
+    friends,
+    select('name', 'gender', 'sport'),
+    field_filter('sport', *('Basketball', 'volleyball')),
+    field_filter('gender', *('male',)),
+)
+>>> result
+[{'gender': 'male', 'name': 'Sam', 'sport': 'Basketball'}]
+```
+These functions have to provide with possibility to select necessary columns
+and make filtering by these columns
