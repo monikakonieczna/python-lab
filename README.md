@@ -8,6 +8,8 @@ including data types, functions, control structures, modules, and object-oriente
 ## Tasks and Exercises
 Below is a list of the tasks and exercises completed during the course:
 
+## Tasks and Exercises: Data Types
+
 ### Task 1: Data Types - Numbers
 #### Rounding
 Create a function with two parameters a and b. The function calculates the following expression:
@@ -146,3 +148,67 @@ that is equal to the following multiplication table:
 4   12  16  20  24  28
 
 ```
+
+## Tasks and Exercises: Functions
+### Task 1: Functions - Arguments
+#### Generate squares
+Implement a function that takes a number as an argument and returns a dictionary, where the key is a number and the value is the square of that number.
+
+**Example:**
+```python
+>>> generate_squares(5)
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+#### Filter
+We have a list of dictionaries:
+```python
+friends = [
+    {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
+    {'name': 'Emily', 'gender': 'female', 'sport': 'volleyball'},
+]
+```
+Create functions `query`, `select`, `field_filter` to work with lists similar to 
+`friends`.
+Stubs for these functions are already created.
+
+Example:
+```python
+>>> result = query(
+    friends,
+    select('name', 'gender', 'sport'),
+    field_filter('sport', *('Basketball', 'volleyball')),
+    field_filter('gender', *('male',)),
+)
+>>> result
+[{'gender': 'male', 'name': 'Sam', 'sport': 'Basketball'}]
+```
+These functions have to provide with possibility to select necessary columns
+and make filtering by these columns
+
+#### Union & intersect
+Create generic `union` and `intersect` functions to work with sets.
+The functions must accept an arbitrary number of arguments of different types: `list`, `tuple`, `set`.
+Each function must return value of `set` type.
+For example:
+```python
+>>> union(('S', 'A', 'M'), ['S', 'P', 'A', 'C'])
+{'S', 'P', 'A', 'M', 'C'}
+
+>>> intersect(('S', 'A', 'C'), ('P', 'C', 'S'), ('G', 'H', 'S', 'C'))
+{'S', 'C'}
+```
+#### Combine dictionaries
+Implement a function that receives a changeable number of dictionaries (keys - letters, values - numbers) and combines them into one dictionary. Dict values should be summarized in case of identical keys
+
+def combine_dicts(*args):
+    ...
+
+dict_1 = {'a': 100, 'b': 200}
+dict_2 = {'a': 200, 'c': 300}
+dict_3 = {'a': 300, 'd': 100}
+
+print(combine_dicts(dict_1, dict_2))
+>>> {'a': 300, 'b': 200, 'c': 300}
+
+print(combine_dicts(dict_1, dict_2, dict_3))
+>>> {'a': 600, 'b': 200, 'c': 300, 'd': 100}
