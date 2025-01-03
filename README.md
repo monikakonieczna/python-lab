@@ -8,6 +8,8 @@ including data types, functions, control structures, modules, and object-oriente
 ## Tasks and Exercises
 Below is a list of the tasks and exercises completed during the course:
 
+## Tasks and Exercises: Data Types
+
 ### Task 1: Data Types - Numbers
 #### Rounding
 Create a function with two parameters a and b. The function calculates the following expression:
@@ -145,4 +147,15 @@ that is equal to the following multiplication table:
 3   9   12  15  18  21  
 4   12  16  20  24  28
 
+```
+
+## Tasks and Exercises: Functions
+### Task 1: Functions - Arguments
+#### Generate squares
+Implement a function that takes a number as an argument and returns a dictionary, where the key is a number and the value is the square of that number.
+
+**Example:**
+```python
+>>> generate_squares(5)
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
