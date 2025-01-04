@@ -200,6 +200,7 @@ For example:
 #### Combine dictionaries
 Implement a function that receives a changeable number of dictionaries (keys - letters, values - numbers) and combines them into one dictionary. Dict values should be summarized in case of identical keys
 
+```
 def combine_dicts(*args):
     ...
 
@@ -212,3 +213,19 @@ print(combine_dicts(dict_1, dict_2))
 
 print(combine_dicts(dict_1, dict_2, dict_3))
 >>> {'a': 600, 'b': 200, 'c': 300, 'd': 100}
+```
+
+### Task 2: Functions - Recursions
+#### Count the sum of elements
+Define a function `seq_sum(sequence)` which allows to count sum of elements. Elements of all nested sequences should be included.
+
+Example:
+```python
+def seq_sum(sequence):
+    pass
+  
+sequence = [1,2,3,[4,5, (6,7)]]
+
+>>> print(seq_sum(sequence))
+28
+```
