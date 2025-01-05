@@ -284,3 +284,20 @@ foo(1, 2, c=3)
 foo; args: a=1, b=2; kwargs: c=3; execution time: 0.12 sec.
 ...
 ```
+
+#### Decorator to validate arguments in other function
+Create decorator `validate` which validates arguments in `set_pixel` function. All function parameters should be between 0(int) and 256(int) inclusive.
+
+In case if all parameters are valid, `set_pixel` function should return _"Pixel created!"_ message. Otherwise, it should return _"Function call is not valid!"_ message.
+
+Use `functools.wraps` where is it necessary.
+
+Don't forget about doc stings.
+
+__Examples__
+```python
+>>> set_pixel(0, 127, 300)
+Function call is not valid!
+>>> set_pixel(0,127,250)
+Pixel created!
+```
