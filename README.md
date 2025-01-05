@@ -243,3 +243,23 @@ sequence = [1,2,3,[4,5, (6,7)]]
 >>> print(linear_seq(sequence))
 [1,2,3,4,5,6,7]
 ```
+
+### Task 2: Functions - Decorators
+#### Time decorator
+***
+Create a decorator function `time_decorator` which has to calculate decorated function execution time
+and put this time value to `execution_time` dictionary where `key` is 
+decorated function name and `value` is this function execution time.
+For example:
+```python
+@time_decorator
+def func_add(a, b):
+    sleep(0.2)
+    return a + b
+
+>>> func_add(10, 20)
+30
+
+>>> execution_time['func_add']
+0.212341254
+```
