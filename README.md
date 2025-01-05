@@ -243,3 +243,74 @@ sequence = [1,2,3,[4,5, (6,7)]]
 >>> print(linear_seq(sequence))
 [1,2,3,4,5,6,7]
 ```
+
+### Task 2: Functions - Decorators
+#### Time decorator
+***
+Create a decorator function `time_decorator` which has to calculate decorated function execution time
+and put this time value to `execution_time` dictionary where `key` is 
+decorated function name and `value` is this function execution time.
+For example:
+```python
+@time_decorator
+def func_add(a, b):
+    sleep(0.2)
+    return a + b
+
+>>> func_add(10, 20)
+30
+
+>>> execution_time['func_add']
+0.212341254
+```
+
+#### Decorator for additional information about calls of decorated function
+Write a decorator which logs information about calls of decorated function,
+values of its arguments, values of keyword arguments and execution time. Log
+should be written to a file.
+
+### Example of using
+``` python
+@log
+def foo(a, b, c):
+    ...
+
+foo(1, 2, c=3)
+```
+
+### log.txt
+```
+...
+foo; args: a=1, b=2; kwargs: c=3; execution time: 0.12 sec.
+...
+```
+
+#### Decorator to validate arguments in other function
+Create decorator `validate` which validates arguments in `set_pixel` function. All function parameters should be between 0(int) and 256(int) inclusive.
+
+In case if all parameters are valid, `set_pixel` function should return _"Pixel created!"_ message. Otherwise, it should return _"Function call is not valid!"_ message.
+
+Use `functools.wraps` where is it necessary.
+
+Don't forget about doc stings.
+
+__Examples__
+```python
+>>> set_pixel(0, 127, 300)
+Function call is not valid!
+>>> set_pixel(0,127,250)
+Pixel created!
+```
+
+#### Decorators Factory
+
+Create a decorators factory (decorator itself). The factory accepts a function (lambda) as an input and returns a decorator that will return the result of the function as the first argument, the result of the decorated function is passed. The function which the factory accepts (in the example below it is a lambda) can take one positional parameter only.
+
+For example:
+```python
+>>> @decorator_apply(lambda user_id: user_id + 1)
+>>> def return_user_id(num: int): 
+        return num
+>>> return_user_id(42) 
+>>> 43
+```
