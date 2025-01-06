@@ -244,7 +244,7 @@ sequence = [1,2,3,[4,5, (6,7)]]
 [1,2,3,4,5,6,7]
 ```
 
-### Task 2: Functions - Decorators
+### Task 3: Functions - Decorators
 #### Time decorator
 ***
 Create a decorator function `time_decorator` which has to calculate decorated function execution time
@@ -313,4 +313,27 @@ For example:
         return num
 >>> return_user_id(42) 
 >>> 43
+```
+### Final Task: Functions - Decorators
+#### Custom split function
+Implement a function that works the same as `str.split` method
+(without using `str.split` itself, ofcourse).
+Pay attention to strings with multiple spaces. For example: '    Hi     Python    world!' 
+
+Example:
+```python
+    def split(data: str, sep=None, maxsplit=-1):
+        ...
+```
+#### Split by index
+Implement a function `split_by_index(s: str, indexes: List[int]) -> List[str]`
+which splits the `s` string by indexes specified in `indexes`. Wrong indexes
+must be ignored.
+Examples:
+```python
+>>> split_by_index("pythoniscool,isn'tit?", [6, 8, 12, 13, 18])
+["python", "is", "cool", ",", "isn't", "it?"]
+
+>>> split_by_index("no luck", [42])
+["no luck"]
 ```
