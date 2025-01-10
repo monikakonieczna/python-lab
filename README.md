@@ -350,3 +350,26 @@ In OOP, it is generally accepted to start the names of methods for extracting da
 and the names of the methods in which fields are equated to a certain value - *"set"*.
 
 In this task, you need to implement `get_value` and `set_value` methods for `Field` class (`__value` property).
+
+#### SchoolMember, Teacher, Student Classes
+***
+Create a class `SchoolMember` which represents any person in school.
+Classes `Teacher` and `Student` are inherited from `SchoolMember`. 
+
+Classes should have the same interface with the public `show ()` method.
+`Teacher` accepts *name* (str), *age* (int), *salary* (int).
+`Student` accepts *name* (str), *age* (int), *grades*.
+Move the same logic of initialization to the class `SchoolMember`.
+
+Method `show()` returns string (see string patters in *Example*).
+
+#### Example
+```
+    >>> persons = [Teacher("Mr.Snape", 40, 3000), Student("Harry", 16, 75)]
+
+    >>> for person in persons:
+           print(person.show())
+
+    "Name: Mr.Snape, Age: 40, Salary: 3000"
+    "Name: Harry, Age: 16, Grades: 75"
+ ```
