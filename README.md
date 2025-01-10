@@ -337,3 +337,84 @@ Examples:
 >>> split_by_index("no luck", [42])
 ["no luck"]
 ```
+
+## Tasks and Exercises: OOP in Python
+### OOP Basics
+#### Field Class
+***
+
+Develop a class `Field` with "full encapsulation", whose attributes are accessed and data changes are implemented through method calls.
+
+
+In OOP, it is generally accepted to start the names of methods for extracting data with the word *"get"*,
+and the names of the methods in which fields are equated to a certain value - *"set"*.
+
+In this task, you need to implement `get_value` and `set_value` methods for `Field` class (`__value` property).
+
+#### SchoolMember, Teacher, Student Classes
+***
+Create a class `SchoolMember` which represents any person in school.
+Classes `Teacher` and `Student` are inherited from `SchoolMember`. 
+
+Classes should have the same interface with the public `show ()` method.
+`Teacher` accepts *name* (str), *age* (int), *salary* (int).
+`Student` accepts *name* (str), *age* (int), *grades*.
+Move the same logic of initialization to the class `SchoolMember`.
+
+Method `show()` returns string (see string patters in *Example*).
+
+Example
+```
+    >>> persons = [Teacher("Mr.Snape", 40, 3000), Student("Harry", 16, 75)]
+
+    >>> for person in persons:
+           print(person.show())
+
+    "Name: Mr.Snape, Age: 40, Salary: 3000"
+    "Name: Harry, Age: 16, Grades: 75"
+ ```
+#### Counter
+Implement a Counter class that optionally accepts the start value and the counter stop value.
+If the start value is not specified the counter should begin with 0.
+If the stop value is not specified it should be counting up infinitely.
+If the counter reaches the stop value, print "Maximal value is reached."
+
+Implement two methods: "increment" and "get"
+
+Example:
+```python
+>>> c = Counter(start=42)
+>>> c.increment()
+>>> c.get()
+43
+
+>>> c = Counter()
+>>> c.increment()
+>>> c.get()
+1
+>>> c.increment()
+>>> c.get()
+2
+
+>>> c = Counter(start=42, stop=43)
+>>> c.increment()
+>>> c.get()
+43
+>>> c.increment()
+Maximal value is reached.
+>>> c.get()
+43
+```
+#### History Dictionary
+Implement a custom dictionary that will memorize the 5 latest changed keys.
+Using method "get_history" return these keys.
+
+Example:
+```python
+>>> d = HistoryDict({"foo": 42})
+>>> d.set_value("bar", 43)
+>>> d.get_history()
+
+["bar"]
+```
+*After your own implementation of the class have a look at collections.deque https://docs.python.org/3/library/collections.html#collections.deque*
