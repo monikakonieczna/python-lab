@@ -532,3 +532,134 @@ The structure of the error message is the following: `Error code: {error message
     >>> divide("* 1")
     "Error code: invalid literal for int() with base 10: '*'"
 ```
+### Magic Methods
+#### Overload addition operator
+You have to overload the addition operator in `Counter` class. Use the `__add__()` magic method to overload the addition.
+
+For example, in case of *a + b*, *a* object should have `__add__()` which accepts *b* as a second parameter (`self` goes first).
+
+In this case, `Counter` object accepts a list from int as a parameter. Object to summarize with will be a str object.
+The result should be a list of strings which have the following pattern: `1 test` - one object from list and str separated by the whitespace.
+
+#### Example
+
+    >>> Counter([1, 2, 3]) + "mississippi"
+
+    ["1 mississippi", "2 mississippi" , "3 mississippi"]
+
+#### The hierarchy out of birds
+Create a hierarchy out of birds. 
+Implement 4 classes:
+* class `Bird` with an attribute `name` and methods `fly` and `walk`.
+* class `FlyingBird` with attributes `name`, `ration`, and with the same methods. `ration` must have a default value. 
+Implement the method `eat` which will describe its typical ration.
+* class `NonFlyingBird` with same characteristics but which obviously without attribute `fly`.
+Add the same "eat" method but with other implementation regarding the swimming bird tastes.
+* class `SuperBird` which can do all of it: walk, fly, swim and eat.
+But be careful which "eat" method you inherit.
+
+Implement str() function call for each class.
+
+Example:
+```python
+>>> b = Bird("Any")
+>>> b.walk()
+"Any bird can walk"
+
+p = NonFlyingBird("Penguin", "fish")
+>> p.swim()
+"Penguin bird can swim"
+>>> p.fly()
+AttributeError: 'Penguin' object has no attribute 'fly'
+>>> p.eat()
+"It eats mostly fish"
+
+c = FlyingBird("Canary")
+>>> str(c)
+"Canary bird can walk and fly"
+>>> c.eat()
+"It eats mostly grains"
+
+s = SuperBird("Gull")
+>>> str(s)
+"Gull bird can walk, swim and fly"
+>>> s.eat()
+"It eats mostly fish"
+```
+#### Book class with the attributes price, author, and name.
+
+You have to implement class `Book` with attributes `price, author, name.`
+
+- `author` and `name` fields have to be immutable;
+- `price` field may be changes but has to be in `0 <= price <= 100` range.
+
+If user tries to change `author` or `name` fields after
+initialization or set price out of range, the `ValueError` should be raised.
+
+Implement descriptors `PriceControl` and `NameControl` to validate parameters.
+
+#### Example
+
+    >>> b = Book("William Faulkner", "The Sound and the Fury", 12)
+    >>> print(f"Author='{b.author}', Name='{b.name}', Price='{b.price}'")
+    Author='William Faulkner', Name='The Sound and the Fury', Price='12'
+    
+    >>> b.price = 55
+    >>> b.price
+    55
+    >>> b.price = -12  # => ValueError: Price must be between 0 and 100.
+    >>> b.price = 101  # => ValueError: Price must be between 0 and 100.
+    
+    >>> b.author = "new author"  # => ValueError: Author can not be changed.
+    >>> b.name = "new name"      # => ValueError: Name can not be changed.
+
+#### Context manager TempDir
+Create a context manager `TempDir` (Use Context Manager protocol - methods `__enter__`, `__exit__`):
+1. When entering the context, a new temporary directory is created with random, unique name.
+   Use `os.mkdir` to create the directory.
+2. Until exiting this context the new created directory becomes current one and all actions are executed 
+   in scope of this new directory.
+3. When exiting this context, the temporary directory is removed with all files in it.
+   Use `rmtree` from `shutil` to remove whole directory.
+4. The new working directory becomes the same as before entering context.
+
+#### Context Manager cd
+Create a context manager `Cd` which changes the current directory to pointed one.
+For example:
+```python
+with Cd('/home')
+```
+When entering the context you need to save the previous directory and when you exit you need to restore it.
+During context manager initialization check that the passed directory is a directory and exists.
+If the passed directory is not a directory or does not exist raise `ValueError`.
+Use the following functions from the `os` module: `getcwd`, `chdir`, `path.isdir`
+
+#### Context Manager LogFile
+Create a context manager `LogFile` inherited from `ContextDecorator` 
+which adds text lines into a log file.
+Every text line must contain the following information:
+- date and time when started (`Start:`)
+- execution time (`Run:`)
+- error information (in the code wrapped by context manager) (`An error occured:`)
+>The trace format example when no errors occurred:
+```python
+Start: 2021-03-22 12:38:24.757637 | Run: 0:00:00.000054 | An error occurred: None
+```
+> The example in case of `ZeroDivisionError` exception
+```python
+Start: 2021-03-22 12:38:24.758463 | Run: 0:00:00.000024 | An error occurred: division by zero
+```
+
+The log file name is passed as an argument to text manager constructor.
+For example:
+```python
+@LogFile('my_trace.log')
+def some_func():
+    ...
+```
+The log file has to be open in `append` mode to allow reopening existing file and adding 
+new information into this file if the same name is pointed.
+
+When an exception is happened the error message has to be put in `An error occured:` into the log and reraised upper.
+
+Use `open` builtin function to open the log file.
