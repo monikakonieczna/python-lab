@@ -613,7 +613,7 @@ Implement descriptors `PriceControl` and `NameControl` to validate parameters.
     >>> b.author = "new author"  # => ValueError: Author can not be changed.
     >>> b.name = "new name"      # => ValueError: Name can not be changed.
 
-#### Context manager 
+#### Context manager TempDir
 Create a context manager `TempDir` (Use Context Manager protocol - methods `__enter__`, `__exit__`):
 1. When entering the context, a new temporary directory is created with random, unique name.
    Use `os.mkdir` to create the directory.
@@ -623,7 +623,7 @@ Create a context manager `TempDir` (Use Context Manager protocol - methods `__en
    Use `rmtree` from `shutil` to remove whole directory.
 4. The new working directory becomes the same as before entering context.
 
-#### Context Manager
+#### Context Manager cd
 Create a context manager `Cd` which changes the current directory to pointed one.
 For example:
 ```python
@@ -633,3 +633,33 @@ When entering the context you need to save the previous directory and when you e
 During context manager initialization check that the passed directory is a directory and exists.
 If the passed directory is not a directory or does not exist raise `ValueError`.
 Use the following functions from the `os` module: `getcwd`, `chdir`, `path.isdir`
+
+#### Context Manager LogFile
+Create a context manager `LogFile` inherited from `ContextDecorator` 
+which adds text lines into a log file.
+Every text line must contain the following information:
+- date and time when started (`Start:`)
+- execution time (`Run:`)
+- error information (in the code wrapped by context manager) (`An error occured:`)
+>The trace format example when no errors occurred:
+```python
+Start: 2021-03-22 12:38:24.757637 | Run: 0:00:00.000054 | An error occurred: None
+```
+> The example in case of `ZeroDivisionError` exception
+```python
+Start: 2021-03-22 12:38:24.758463 | Run: 0:00:00.000024 | An error occurred: division by zero
+```
+
+The log file name is passed as an argument to text manager constructor.
+For example:
+```python
+@LogFile('my_trace.log')
+def some_func():
+    ...
+```
+The log file has to be open in `append` mode to allow reopening existing file and adding 
+new information into this file if the same name is pointed.
+
+When an exception is happened the error message has to be put in `An error occured:` into the log and reraised upper.
+
+Use `open` builtin function to open the log file.
