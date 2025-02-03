@@ -622,3 +622,14 @@ Create a context manager `TempDir` (Use Context Manager protocol - methods `__en
 3. When exiting this context, the temporary directory is removed with all files in it.
    Use `rmtree` from `shutil` to remove whole directory.
 4. The new working directory becomes the same as before entering context.
+
+#### Context Manager
+Create a context manager `Cd` which changes the current directory to pointed one.
+For example:
+```python
+with Cd('/home')
+```
+When entering the context you need to save the previous directory and when you exit you need to restore it.
+During context manager initialization check that the passed directory is a directory and exists.
+If the passed directory is not a directory or does not exist raise `ValueError`.
+Use the following functions from the `os` module: `getcwd`, `chdir`, `path.isdir`
